@@ -8,8 +8,8 @@ async function authenticateUser(email, senha) {
     const user = await User.findOne({ email });
 
     if (!user || !bcrypt.compareSync(senha, user.senha)) {
-      //throw new Error('Usuário e/ou senha inválidos');
-        res.json('Usuário e/ou senha inválidos')
+      throw new Error('Usuário e/ou senha inválidos');
+        
     }
 
     // Atualiza o último login e salva o token

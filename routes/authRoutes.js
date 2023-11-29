@@ -35,9 +35,21 @@ async function pesquisa(req, res) {
     res.status(401).json({ mensagem: error.message });
   }
 }
+function cadastro_get(req,res){
+  res.render('cadastro');
+}
+function login_get(req,res){
+  res.render('login');
+}
+function search_get(req,res){
+  res.render('search');
+}
 
 module.exports = {
     signin,
     cadastro,
     pesquisa,
+    cadastro_get,
+    login_get,
+    search_get,
 };

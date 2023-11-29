@@ -18,15 +18,10 @@ app.post('/signin',authRoutes.signin);
 app.post('/cadastro',authRoutes.cadastro);
 app.post('/search',authRoutes.pesquisa);
 
-app.get('/cadastro', (req, res) => {
-    res.render('cadastro');
-});
-app.get('/login', (req, res) => {
-    res.render('login');
-});
-app.get('/search', (req, res) => {
-  res.render('search');
-});
+app.get('/cadastro',authRoutes.cadastro_get);
+app.get('/login',authRoutes.login_get);
+app.get('/search',authRoutes.search_get);
+
 
   
 
